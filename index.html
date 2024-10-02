@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coding Task</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="toolbar d-flex justify-content-end sticky-md-top">
+        <a
+          href="#"
+          class="btn btn-outline-secondary mx-1"
+          onclick="openAddModal()"
+          ><i class="fa-solid fa-plus"></i
+        ></a>
+        <a href="#" class="btn btn-outline-secondary mx-1" onclick="scrollUp()"
+          ><i class="fa-solid fa-up-long"></i
+        ></a>
+        <a
+          href="#"
+          class="btn btn-outline-secondary mx-1"
+          onclick="scrollDown()"
+          ><i class="fa-solid fa-down-long"></i
+        ></a>
+        <a
+          href="#"
+          class="btn btn-outline-secondary mx-1"
+          onclick="deleteData()"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+        <a
+          href="#"
+          class="btn btn-outline-secondary mx-1"
+          onclick="refreshTable()"
+          ><i class="fa-solid fa-rotate-right"></i
+        ></a>
+        <a href="#" class="btn btn-outline-secondary mx-1" onclick="saveData()"
+          ><i class="fa-solid fa-floppy-disk"></i
+        ></a>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="chemicalTable">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">ID</th>
+              <th onclick="sortTable(1)">Chemical Name</th>
+              <th onclick="sortTable(2)">Vender</th>
+              <th onclick="sortTable(3)">Density</th>
+              <th onclick="sortTable(4)">Viscosity</th>
+              <th onclick="sortTable(5)">Packaging</th>
+              <th onclick="sortTable(6)">Pack Size</th>
+              <th onclick="sortTable(7)">Unit</th>
+              <th onclick="sortTable(8)">Quantity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="EditModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="EditModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="EditModelLable">Add new Chemicle</h5>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              onclick="closeModal()"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="chemicalForm">
+              <input type="hidden" id="editId" />
+              <div class="form-group">
+                <label for=" chemicalName">Chemical Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="chemicalName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for=" Vender">Vender</label>
+                <input type="text" class="form-control" id="Vender" required />
+              </div>
+              <div class="form-group">
+                <label for=" Density">Density</label>
+                <input type="text" class="form-control" id="Density" required />
+              </div>
+              <div class="form-group">
+                <label for=" Viscosity">Viscosity</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Viscosity"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for=" Packaging">Packaging</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Packaging"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for=" packSize">Pack size</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="packSize"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for=" Unit">Unit</label>
+                <input type="text" class="form-control" id="Unit" required />
+              </div>
+              <div class="form-group">
+                <label for=" Quantity">Quantity</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Quantity"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
