@@ -1,0 +1,32 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.modal-dialog {
+    max-width: 600px;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.toolbar {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) { /* Changes for smaller screens */
+    .toolbar a {
+      display: block;
+      margin-bottom: 5px; /* Stack buttons vertically with some spacing */
+    }
+  }
